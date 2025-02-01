@@ -25,3 +25,5 @@ bean的使用
 ORM
 
 ThreadLocal
+
+mybatis pagehelper
