@@ -20,3 +20,8 @@ api管理 设计阶段
 api测试 开发阶段 Swagger/Knife4J
 
 bean的使用
+
+## 1.31
+ORM
+
+ThreadLocal
