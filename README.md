@@ -21,9 +21,14 @@ api测试 开发阶段 Swagger/Knife4J
 
 bean的使用
 
-## 1.31
+## 2.1
 ORM
 
 ThreadLocal
 
 mybatis pagehelper
+
+WebMvcConfiguration
+
+## 2.2
+@PathVariable
