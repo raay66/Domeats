@@ -32,3 +32,6 @@ WebMvcConfiguration
 
 ## 2.2
 @PathVariable
+
+公共字段拦截填充 减少代码冗余 AOP
+

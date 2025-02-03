@@ -32,6 +32,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     /**
      * 启用/禁用员工账号
+     *
      * @param status
      * @param id
      */
@@ -78,10 +79,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     /**
      * 新增员工
+     *
      * @param employeeDTO
      */
     public void save(EmployeeDTO employeeDTO) {
-        System.out.println("当前线程ID："+Thread.currentThread().getId());
+        System.out.println("当前线程ID：" + Thread.currentThread().getId());
 
         Employee employee = new Employee();
 
@@ -95,34 +97,36 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.setPassword(DigestUtils.md5DigestAsHex(PasswordConstant.DEFAULT_PASSWORD.getBytes()));
 
         //设置当前记录的创建时间和修改时间
-        employee.setCreateTime(LocalDateTime.now());
-        employee.setUpdateTime(LocalDateTime.now());
+        //employee.setCreateTime(LocalDateTime.now());
+        //employee.setUpdateTime(LocalDateTime.now());
 
         //设置当前记录创建人id和修改人id
-        employee.setCreateUser(BaseContext.getCurrentId());
-        employee.setUpdateUser(BaseContext.getCurrentId());
+        //employee.setCreateUser(BaseContext.getCurrentId());
+        //employee.setUpdateUser(BaseContext.getCurrentId());
 
         employeeMapper.insert(employee);
     }
 
     /**
      * 分页查询
+     *
      * @param employeePageQueryDTO
      * @return
      */
     public PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO) {
         //开始分页查询
-        PageHelper.startPage(employeePageQueryDTO.getPage(),employeePageQueryDTO.getPageSize());
+        PageHelper.startPage(employeePageQueryDTO.getPage(), employeePageQueryDTO.getPageSize());
         Page<Employee> page = employeeMapper.pageQuery(employeePageQueryDTO);
 
         long total = page.getTotal();
         List<Employee> records = page.getResult();
 
-        return new PageResult(total,records);
+        return new PageResult(total, records);
     }
 
     /**
      * 根据ID查询员工信息
+     *
      * @param id
      * @return
      */
@@ -134,13 +138,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     /**
      * 编辑员工信息
+     *
      * @param employeeDTO
      */
     public void update(EmployeeDTO employeeDTO) {
         Employee employee = new Employee();
         BeanUtils.copyProperties(employeeDTO, employee);
-        employee.setUpdateTime(LocalDateTime.now());
-        employee.setUpdateUser(BaseContext.getCurrentId());
+        //employee.setUpdateTime(LocalDateTime.now());
+        //employee.setUpdateUser(BaseContext.getCurrentId());
         employeeMapper.update(employee);
     }
 
