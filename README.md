@@ -35,3 +35,8 @@ WebMvcConfiguration
 
 公共字段拦截填充 减少代码冗余 AOP
 
+## 2.4
+OSS config
+
+useGeneratedKey获取主键
+
