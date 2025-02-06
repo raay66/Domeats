@@ -40,3 +40,8 @@ OSS config
 
 useGeneratedKey获取主键
 
+## 2.5
+Redis
+* 基于内存的key-value结构数据库
+* 性能高 适合存储热点数据
+
