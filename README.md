@@ -70,5 +70,7 @@ key是字符串类型 value有五种常用类型
 * 通用命令
   * KEYS pattern / EXISTS key / TYPE key / DEL key1 key2 ...
 
+## 2.12
+HttpClient 创建HttpClient对象->创建Http请求对象->调用HttpClient的execute方法发送请求
 
 
