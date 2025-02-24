@@ -77,3 +77,8 @@ HttpClient 创建HttpClient对象->创建Http请求对象->调用HttpClient的ex
 ## 2.18
 Spring Cache
 Spring EL
+
+
+## 2.24
+Spring Task
+* cron表达式
