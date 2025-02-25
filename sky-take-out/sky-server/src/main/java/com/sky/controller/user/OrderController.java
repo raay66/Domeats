@@ -2,6 +2,7 @@ package com.sky.controller.user;
 
 import com.sky.dto.OrdersPaymentDTO;
 import com.sky.dto.OrdersSubmitDTO;
+import com.sky.entity.Orders;
 import com.sky.result.PageResult;
 import com.sky.result.Result;
 import com.sky.service.OrderService;
@@ -68,4 +69,10 @@ public class OrderController {
         return Result.success();
     }
 
+    @GetMapping("/reminder/{id}")
+    @ApiOperation("客户催单")
+    public Result reminder(@PathVariable("id") Long id) {
+        orderService.reminder(id);
+        return Result.success();
+    }
 }

@@ -17,7 +17,7 @@ public class OrderTask {
     @Autowired
     private OrderMapper orderMapper;
 
-    @Scheduled(cron = "0 * * * * ? ")
+    @Scheduled(cron = "0 0/10 * * * ? ")
     public void processTimeoutOrder(){
         log.info("定时处理超时订单：{}", LocalDateTime.now());
 
