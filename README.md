@@ -84,3 +84,6 @@ Spring Task
 * cron表达式
 
 WebSocket
+
+## 2.26
+Apache ECharts
