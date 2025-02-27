@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDate;
 
 @RestController
@@ -60,4 +61,11 @@ public class StatisticsController {
             @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate end){
         log.info("销量排名 begin:{},end:{}", begin, end);
         return Result.success(statisticsService.getTop10SalesStatistics(begin,end));
-    }}
+    }
+
+    @GetMapping("/export")
+    @ApiOperation("导出运营数据")
+    public void exportBusinessFile(HttpServletResponse response) {
+        statisticsService.exportBusinessFile(response);
+    }
+}
